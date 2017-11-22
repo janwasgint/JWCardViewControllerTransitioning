@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC152D691FC08D4100FA81F8 /* PresentingACard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC152D681FC08D4100FA81F8 /* PresentingACard.storyboard */; };
+		BC152D6D1FC08E2800FA81F8 /* PresentingACardInANavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC152D6C1FC08E2800FA81F8 /* PresentingACardInANavigationController.storyboard */; };
+		BC152D6F1FC08E6700FA81F8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC152D6E1FC08E6700FA81F8 /* SecondViewController.swift */; };
+		BC152D711FC08EDA00FA81F8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC152D701FC08EDA00FA81F8 /* FirstViewController.swift */; };
+		BC152D731FC094E100FA81F8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC152D721FC094E100FA81F8 /* Utils.swift */; };
+		BC152D751FC0962D00FA81F8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC152D741FC0962D00FA81F8 /* DismissButton.swift */; };
+		BC152D771FC0A7EB00FA81F8 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC152D761FC0A7EB00FA81F8 /* ThirdViewController.swift */; };
+		BC6905361FB8FF30007539FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6905351FB8FF30007539FD /* MainViewController.swift */; };
+		BC6905391FB8FF30007539FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6905371FB8FF30007539FD /* Main.storyboard */; };
+		BC6905491FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6905481FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift */; };
+		BC6905541FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6905531FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift */; };
+		BC98711B1FC1F07400D87214 /* PresentingMultipleCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC98711A1FC1F07400D87214 /* PresentingMultipleCards.storyboard */; };
+		BC98711D1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98711C1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift */; };
+		BCC484DF1FBF618500B045D1 /* JWCardAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484D81FBF618400B045D1 /* JWCardAnimatorDelegate.swift */; };
+		BCC484E01FBF618500B045D1 /* JWCardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484D91FBF618400B045D1 /* JWCardAnimator.swift */; };
+		BCC484E11FBF618500B045D1 /* JWCardNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484DA1FBF618400B045D1 /* JWCardNavigationControllerDelegate.swift */; };
+		BCC484E21FBF618500B045D1 /* JWCardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484DB1FBF618400B045D1 /* JWCardAnimation.swift */; };
+		BCC484E31FBF618500B045D1 /* JWCardPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484DC1FBF618400B045D1 /* JWCardPopAnimator.swift */; };
+		BCC484E41FBF618500B045D1 /* JWCardPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484DD1FBF618400B045D1 /* JWCardPushAnimator.swift */; };
+		BCC484E51FBF618500B045D1 /* JWCardAnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484DE1FBF618400B045D1 /* JWCardAnimationConstants.swift */; };
+		BCC484E91FBF6A0800B045D1 /* PresentingACardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484E81FBF6A0800B045D1 /* PresentingACardViewController.swift */; };
+		BCDB21EA1FC1FEF000C67A43 /* JWCardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB21E91FC1FEF000C67A43 /* JWCardUtils.swift */; };
+		BCE4E5B01FC5B4E0002E4809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E5AC1FC5B4E0002E4809 /* AppDelegate.swift */; };
+		BCE4E5B31FC5B4E0002E4809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE4E5AF1FC5B4E0002E4809 /* Assets.xcassets */; };
+		BCE4E5B61FC5B52E002E4809 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE4E5B41FC5B52E002E4809 /* LaunchScreen.storyboard */; };
+		BCE4E5B81FC5B561002E4809 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE4E5B71FC5B561002E4809 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC6905451FB8FF31007539FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC6905281FB8FF30007539FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC69052F1FB8FF30007539FD;
+			remoteInfo = JWCardViewControllerTransitioning;
+		};
+		BC6905501FB8FF31007539FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC6905281FB8FF30007539FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC69052F1FB8FF30007539FD;
+			remoteInfo = JWCardViewControllerTransitioning;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC152D681FC08D4100FA81F8 /* PresentingACard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PresentingACard.storyboard; sourceTree = "<group>"; };
+		BC152D6C1FC08E2800FA81F8 /* PresentingACardInANavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PresentingACardInANavigationController.storyboard; sourceTree = "<group>"; };
+		BC152D6E1FC08E6700FA81F8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BC152D701FC08EDA00FA81F8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		BC152D721FC094E100FA81F8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BC152D741FC0962D00FA81F8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		BC152D761FC0A7EB00FA81F8 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		BC6905301FB8FF30007539FD /* JWCardViewControllerTransitioning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWCardViewControllerTransitioning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6905351FB8FF30007539FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BC6905381FB8FF30007539FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC6905441FB8FF31007539FD /* JWCardViewControllerTransitioningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWCardViewControllerTransitioningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6905481FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardViewControllerTransitioningTests.swift; sourceTree = "<group>"; };
+		BC69054A1FB8FF31007539FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC69054F1FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWCardViewControllerTransitioningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6905531FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardViewControllerTransitioningUITests.swift; sourceTree = "<group>"; };
+		BC6905551FB8FF31007539FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC98711A1FC1F07400D87214 /* PresentingMultipleCards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PresentingMultipleCards.storyboard; sourceTree = "<group>"; };
+		BC98711C1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingMultipleCardsViewController.swift; sourceTree = "<group>"; };
+		BCC484D81FBF618400B045D1 /* JWCardAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardAnimatorDelegate.swift; sourceTree = "<group>"; };
+		BCC484D91FBF618400B045D1 /* JWCardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardAnimator.swift; sourceTree = "<group>"; };
+		BCC484DA1FBF618400B045D1 /* JWCardNavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		BCC484DB1FBF618400B045D1 /* JWCardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardAnimation.swift; sourceTree = "<group>"; };
+		BCC484DC1FBF618400B045D1 /* JWCardPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardPopAnimator.swift; sourceTree = "<group>"; };
+		BCC484DD1FBF618400B045D1 /* JWCardPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardPushAnimator.swift; sourceTree = "<group>"; };
+		BCC484DE1FBF618400B045D1 /* JWCardAnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardAnimationConstants.swift; sourceTree = "<group>"; };
+		BCC484E81FBF6A0800B045D1 /* PresentingACardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingACardViewController.swift; sourceTree = "<group>"; };
+		BCDB21E91FC1FEF000C67A43 /* JWCardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardUtils.swift; sourceTree = "<group>"; };
+		BCE4E5AC1FC5B4E0002E4809 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCE4E5AF1FC5B4E0002E4809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCE4E5B51FC5B52E002E4809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCE4E5B71FC5B561002E4809 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = JWCardViewControllerTransitioning/Info.plist; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC69052D1FB8FF30007539FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6905411FB8FF31007539FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC69054C1FB8FF31007539FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC152D5D1FC0890500FA81F8 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				BC6905371FB8FF30007539FD /* Main.storyboard */,
+				BC6905351FB8FF30007539FD /* MainViewController.swift */,
+				BC152D651FC08CA500FA81F8 /* Presenting a Card */,
+				BC152D661FC08CC400FA81F8 /* Presenting a Card in a Navigation Controller */,
+				BC152D671FC08CEF00FA81F8 /* Presenting multiple Cards */,
+				BC152D5E1FC0894A00FA81F8 /* Miscellaneous */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		BC152D5E1FC0894A00FA81F8 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				BCE4E5B71FC5B561002E4809 /* Info.plist */,
+				BCE4E5B41FC5B52E002E4809 /* LaunchScreen.storyboard */,
+				BCE4E5AC1FC5B4E0002E4809 /* AppDelegate.swift */,
+				BCE4E5AF1FC5B4E0002E4809 /* Assets.xcassets */,
+				BC152D741FC0962D00FA81F8 /* DismissButton.swift */,
+				BC152D721FC094E100FA81F8 /* Utils.swift */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		BC152D651FC08CA500FA81F8 /* Presenting a Card */ = {
+			isa = PBXGroup;
+			children = (
+				BC152D681FC08D4100FA81F8 /* PresentingACard.storyboard */,
+				BCC484E81FBF6A0800B045D1 /* PresentingACardViewController.swift */,
+			);
+			path = "Presenting a Card";
+			sourceTree = "<group>";
+		};
+		BC152D661FC08CC400FA81F8 /* Presenting a Card in a Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC152D6C1FC08E2800FA81F8 /* PresentingACardInANavigationController.storyboard */,
+				BC152D701FC08EDA00FA81F8 /* FirstViewController.swift */,
+				BC152D6E1FC08E6700FA81F8 /* SecondViewController.swift */,
+				BC152D761FC0A7EB00FA81F8 /* ThirdViewController.swift */,
+			);
+			path = "Presenting a Card in a Navigation Controller";
+			sourceTree = "<group>";
+		};
+		BC152D671FC08CEF00FA81F8 /* Presenting multiple Cards */ = {
+			isa = PBXGroup;
+			children = (
+				BC98711A1FC1F07400D87214 /* PresentingMultipleCards.storyboard */,
+				BC98711C1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift */,
+			);
+			path = "Presenting multiple Cards";
+			sourceTree = "<group>";
+		};
+		BC6905271FB8FF30007539FD = {
+			isa = PBXGroup;
+			children = (
+				BC6905321FB8FF30007539FD /* JWCardViewControllerTransitioning */,
+				BC6905471FB8FF31007539FD /* JWCardViewControllerTransitioningTests */,
+				BC6905521FB8FF31007539FD /* JWCardViewControllerTransitioningUITests */,
+				BC6905311FB8FF30007539FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC6905311FB8FF30007539FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC6905301FB8FF30007539FD /* JWCardViewControllerTransitioning.app */,
+				BC6905441FB8FF31007539FD /* JWCardViewControllerTransitioningTests.xctest */,
+				BC69054F1FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC6905321FB8FF30007539FD /* JWCardViewControllerTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				BCC484E71FBF61BB00B045D1 /* Framework */,
+				BC152D5D1FC0890500FA81F8 /* Sample */,
+			);
+			path = JWCardViewControllerTransitioning;
+			sourceTree = "<group>";
+		};
+		BC6905471FB8FF31007539FD /* JWCardViewControllerTransitioningTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC6905481FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift */,
+				BC69054A1FB8FF31007539FD /* Info.plist */,
+			);
+			path = JWCardViewControllerTransitioningTests;
+			sourceTree = "<group>";
+		};
+		BC6905521FB8FF31007539FD /* JWCardViewControllerTransitioningUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC6905531FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift */,
+				BC6905551FB8FF31007539FD /* Info.plist */,
+			);
+			path = JWCardViewControllerTransitioningUITests;
+			sourceTree = "<group>";
+		};
+		BCC484E71FBF61BB00B045D1 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				BCC484DE1FBF618400B045D1 /* JWCardAnimationConstants.swift */,
+				BCC484DB1FBF618400B045D1 /* JWCardAnimation.swift */,
+				BCC484D91FBF618400B045D1 /* JWCardAnimator.swift */,
+				BCC484D81FBF618400B045D1 /* JWCardAnimatorDelegate.swift */,
+				BCC484DC1FBF618400B045D1 /* JWCardPopAnimator.swift */,
+				BCC484DD1FBF618400B045D1 /* JWCardPushAnimator.swift */,
+				BCC484DA1FBF618400B045D1 /* JWCardNavigationControllerDelegate.swift */,
+				BCDB21E91FC1FEF000C67A43 /* JWCardUtils.swift */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC69052F1FB8FF30007539FD /* JWCardViewControllerTransitioning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC6905581FB8FF31007539FD /* Build configuration list for PBXNativeTarget "JWCardViewControllerTransitioning" */;
+			buildPhases = (
+				BC69052C1FB8FF30007539FD /* Sources */,
+				BC69052D1FB8FF30007539FD /* Frameworks */,
+				BC69052E1FB8FF30007539FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JWCardViewControllerTransitioning;
+			productName = JWCardViewControllerTransitioning;
+			productReference = BC6905301FB8FF30007539FD /* JWCardViewControllerTransitioning.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC6905431FB8FF31007539FD /* JWCardViewControllerTransitioningTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC69055B1FB8FF31007539FD /* Build configuration list for PBXNativeTarget "JWCardViewControllerTransitioningTests" */;
+			buildPhases = (
+				BC6905401FB8FF31007539FD /* Sources */,
+				BC6905411FB8FF31007539FD /* Frameworks */,
+				BC6905421FB8FF31007539FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC6905461FB8FF31007539FD /* PBXTargetDependency */,
+			);
+			name = JWCardViewControllerTransitioningTests;
+			productName = JWCardViewControllerTransitioningTests;
+			productReference = BC6905441FB8FF31007539FD /* JWCardViewControllerTransitioningTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC69054E1FB8FF31007539FD /* JWCardViewControllerTransitioningUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC69055E1FB8FF31007539FD /* Build configuration list for PBXNativeTarget "JWCardViewControllerTransitioningUITests" */;
+			buildPhases = (
+				BC69054B1FB8FF31007539FD /* Sources */,
+				BC69054C1FB8FF31007539FD /* Frameworks */,
+				BC69054D1FB8FF31007539FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC6905511FB8FF31007539FD /* PBXTargetDependency */,
+			);
+			name = JWCardViewControllerTransitioningUITests;
+			productName = JWCardViewControllerTransitioningUITests;
+			productReference = BC69054F1FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC6905281FB8FF30007539FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Jan Wasgint";
+				TargetAttributes = {
+					BC69052F1FB8FF30007539FD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					BC6905431FB8FF31007539FD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC69052F1FB8FF30007539FD;
+					};
+					BC69054E1FB8FF31007539FD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC69052F1FB8FF30007539FD;
+					};
+				};
+			};
+			buildConfigurationList = BC69052B1FB8FF30007539FD /* Build configuration list for PBXProject "JWCardViewControllerTransitioning" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC6905271FB8FF30007539FD;
+			productRefGroup = BC6905311FB8FF30007539FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC69052F1FB8FF30007539FD /* JWCardViewControllerTransitioning */,
+				BC6905431FB8FF31007539FD /* JWCardViewControllerTransitioningTests */,
+				BC69054E1FB8FF31007539FD /* JWCardViewControllerTransitioningUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC69052E1FB8FF30007539FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC152D691FC08D4100FA81F8 /* PresentingACard.storyboard in Resources */,
+				BC98711B1FC1F07400D87214 /* PresentingMultipleCards.storyboard in Resources */,
+				BC152D6D1FC08E2800FA81F8 /* PresentingACardInANavigationController.storyboard in Resources */,
+				BCE4E5B61FC5B52E002E4809 /* LaunchScreen.storyboard in Resources */,
+				BCE4E5B31FC5B4E0002E4809 /* Assets.xcassets in Resources */,
+				BC6905391FB8FF30007539FD /* Main.storyboard in Resources */,
+				BCE4E5B81FC5B561002E4809 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6905421FB8FF31007539FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC69054D1FB8FF31007539FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC69052C1FB8FF30007539FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC152D751FC0962D00FA81F8 /* DismissButton.swift in Sources */,
+				BC152D6F1FC08E6700FA81F8 /* SecondViewController.swift in Sources */,
+				BC6905361FB8FF30007539FD /* MainViewController.swift in Sources */,
+				BC152D711FC08EDA00FA81F8 /* FirstViewController.swift in Sources */,
+				BCC484DF1FBF618500B045D1 /* JWCardAnimatorDelegate.swift in Sources */,
+				BC152D731FC094E100FA81F8 /* Utils.swift in Sources */,
+				BC152D771FC0A7EB00FA81F8 /* ThirdViewController.swift in Sources */,
+				BCC484E01FBF618500B045D1 /* JWCardAnimator.swift in Sources */,
+				BCC484E11FBF618500B045D1 /* JWCardNavigationControllerDelegate.swift in Sources */,
+				BCC484E21FBF618500B045D1 /* JWCardAnimation.swift in Sources */,
+				BCDB21EA1FC1FEF000C67A43 /* JWCardUtils.swift in Sources */,
+				BCC484E31FBF618500B045D1 /* JWCardPopAnimator.swift in Sources */,
+				BCC484E41FBF618500B045D1 /* JWCardPushAnimator.swift in Sources */,
+				BC98711D1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift in Sources */,
+				BCC484E51FBF618500B045D1 /* JWCardAnimationConstants.swift in Sources */,
+				BCE4E5B01FC5B4E0002E4809 /* AppDelegate.swift in Sources */,
+				BCC484E91FBF6A0800B045D1 /* PresentingACardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC6905401FB8FF31007539FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6905491FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC69054B1FB8FF31007539FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6905541FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC6905461FB8FF31007539FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC69052F1FB8FF30007539FD /* JWCardViewControllerTransitioning */;
+			targetProxy = BC6905451FB8FF31007539FD /* PBXContainerItemProxy */;
+		};
+		BC6905511FB8FF31007539FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC69052F1FB8FF30007539FD /* JWCardViewControllerTransitioning */;
+			targetProxy = BC6905501FB8FF31007539FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC6905371FB8FF30007539FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC6905381FB8FF30007539FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCE4E5B41FC5B52E002E4809 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCE4E5B51FC5B52E002E4809 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC6905561FB8FF31007539FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC6905571FB8FF31007539FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC6905591FB8FF31007539FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC3682932;
+				INFOPLIST_FILE = JWCardViewControllerTransitioning/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jan.JWCardViewControllerTransitioning;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC69055A1FB8FF31007539FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC3682932;
+				INFOPLIST_FILE = JWCardViewControllerTransitioning/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jan.JWCardViewControllerTransitioning;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC69055C1FB8FF31007539FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC3682932;
+				INFOPLIST_FILE = JWCardViewControllerTransitioningTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jan.JWCardViewControllerTransitioningTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JWCardViewControllerTransitioning.app/JWCardViewControllerTransitioning";
+			};
+			name = Debug;
+		};
+		BC69055D1FB8FF31007539FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC3682932;
+				INFOPLIST_FILE = JWCardViewControllerTransitioningTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jan.JWCardViewControllerTransitioningTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JWCardViewControllerTransitioning.app/JWCardViewControllerTransitioning";
+			};
+			name = Release;
+		};
+		BC69055F1FB8FF31007539FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC3682932;
+				INFOPLIST_FILE = JWCardViewControllerTransitioningUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jan.JWCardViewControllerTransitioningUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JWCardViewControllerTransitioning;
+			};
+			name = Debug;
+		};
+		BC6905601FB8FF31007539FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC3682932;
+				INFOPLIST_FILE = JWCardViewControllerTransitioningUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jan.JWCardViewControllerTransitioningUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JWCardViewControllerTransitioning;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC69052B1FB8FF30007539FD /* Build configuration list for PBXProject "JWCardViewControllerTransitioning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6905561FB8FF31007539FD /* Debug */,
+				BC6905571FB8FF31007539FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC6905581FB8FF31007539FD /* Build configuration list for PBXNativeTarget "JWCardViewControllerTransitioning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC6905591FB8FF31007539FD /* Debug */,
+				BC69055A1FB8FF31007539FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC69055B1FB8FF31007539FD /* Build configuration list for PBXNativeTarget "JWCardViewControllerTransitioningTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC69055C1FB8FF31007539FD /* Debug */,
+				BC69055D1FB8FF31007539FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC69055E1FB8FF31007539FD /* Build configuration list for PBXNativeTarget "JWCardViewControllerTransitioningUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC69055F1FB8FF31007539FD /* Debug */,
+				BC6905601FB8FF31007539FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC6905281FB8FF30007539FD /* Project object */;
+}

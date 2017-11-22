@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FZl-od-Ii1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="JWCardViewControllerTransitioning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the JWCardViewController-Transitioning Sample" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHg-eJ-rds">
+                                <rect key="frame" x="16" y="70" width="343" height="100.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zOE-63-CgB">
+                                <rect key="frame" x="0.0" y="200.5" width="375" height="466.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DZ2-XZ-e40"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ivv-kn-e6F"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aHg-eJ-rds" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="0K1-gv-eUd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zOE-63-CgB" secondAttribute="bottom" id="3Ul-Qf-ERE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zOE-63-CgB" secondAttribute="trailing" id="GMz-cz-XET"/>
+                            <constraint firstItem="zOE-63-CgB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L8W-Li-Wp3"/>
+                            <constraint firstItem="aHg-eJ-rds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YXY-vf-Rqd"/>
+                            <constraint firstItem="zOE-63-CgB" firstAttribute="top" secondItem="aHg-eJ-rds" secondAttribute="bottom" constant="30" id="iJ5-Wm-fgs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aHg-eJ-rds" secondAttribute="trailing" constant="16" id="vUT-XD-kzZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nAo-g5-X2S"/>
+                    <connections>
+                        <outlet property="sampleSelectionTableView" destination="zOE-63-CgB" id="iHH-od-H9x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415.19999999999999" y="37.331334332833585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0PD-Dn-Vmh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FZl-od-Ii1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JxE-ng-HKp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Yle-on-qrg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l39-vH-Jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-324" y="37"/>
+        </scene>
+        <!--CardViewControllerIdentifier-->
+        <scene sceneID="M1D-NL-JAW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CardViewControllerIdentifier" storyboardName="PresentingACard" referencedIdentifier="CardViewControllerIdentifier" id="6FQ-XG-3V1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyu-Sa-lOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="-239"/>
+        </scene>
+        <!--PresentingACardInANavigationController-->
+        <scene sceneID="BXi-0m-zpd">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="NavigationViewControllerIdentifier" storyboardName="PresentingACardInANavigationController" id="tfl-MP-ibU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3P-vB-ckR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-117"/>
+        </scene>
+        <!--PresentingMultipleCards-->
+        <scene sceneID="cl2-Fa-G2w">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MultipleCardsViewControllerIdentifier" storyboardName="PresentingMultipleCards" id="5Hk-7y-ree" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBK-32-y4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="10"/>
+        </scene>
+    </scenes>
+</document>

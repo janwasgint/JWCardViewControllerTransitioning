@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v6F-yy-mxG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Presenting Multiple Cards View Controller-->
+        <scene sceneID="xI7-Cu-Ltd">
+            <objects>
+                <viewController storyboardIdentifier="MultipleCardsViewControllerIdentifier" id="v6F-yy-mxG" customClass="PresentingMultipleCardsViewController" customModule="JWCardViewControllerTransitioning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dMa-Zt-LS3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hd2-7n-2d3">
+                                <rect key="frame" x="16" y="515" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.20150703191757202" green="0.46923196315765381" blue="0.96475356817245483" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0FT-z9-IHf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Push another Card">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="v6F-yy-mxG" eventType="touchUpInside" id="o49-3s-yaf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7D-dQ-FZC" customClass="DismissButton" customModule="JWCardViewControllerTransitioning" customModuleProvider="target">
+                                <rect key="frame" x="16" y="591" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R0C-FT-Exd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Pop"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="popButtonPressed:" destination="v6F-yy-mxG" eventType="touchUpInside" id="ZYn-ms-9Qo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIEWCONTROLLER #0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oos-JS-xuW">
+                                <rect key="frame" x="16" y="70" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presenting multiple Cards" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-Fc-XLK">
+                                <rect key="frame" x="16" y="90" width="343" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You can display as many cards as you want on top of each other." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pbw-PC-ujS">
+                                <rect key="frame" x="16" y="139.5" width="343" height="359.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hd2-7n-2d3" firstAttribute="top" secondItem="Pbw-PC-ujS" secondAttribute="bottom" constant="16" id="9c6-e3-rGf"/>
+                            <constraint firstItem="j7D-dQ-FZC" firstAttribute="top" secondItem="Hd2-7n-2d3" secondAttribute="bottom" constant="16" id="9k3-6y-zcJ"/>
+                            <constraint firstItem="j7D-dQ-FZC" firstAttribute="leading" secondItem="wLg-Mf-X7w" secondAttribute="leading" constant="16" id="B3G-2K-nOJ"/>
+                            <constraint firstItem="Pbw-PC-ujS" firstAttribute="leading" secondItem="wLg-Mf-X7w" secondAttribute="leading" constant="16" id="BYU-66-hS4"/>
+                            <constraint firstItem="oos-JS-xuW" firstAttribute="top" secondItem="wLg-Mf-X7w" secondAttribute="top" constant="50" id="L1R-qc-1DG"/>
+                            <constraint firstItem="wLg-Mf-X7w" firstAttribute="trailing" secondItem="Pbw-PC-ujS" secondAttribute="trailing" constant="16" id="NVx-X3-4Qz"/>
+                            <constraint firstItem="gFc-Fc-XLK" firstAttribute="leading" secondItem="wLg-Mf-X7w" secondAttribute="leading" constant="16" id="UJ4-7u-BNA"/>
+                            <constraint firstItem="wLg-Mf-X7w" firstAttribute="trailing" secondItem="j7D-dQ-FZC" secondAttribute="trailing" constant="16" id="ZYN-6H-Nr5"/>
+                            <constraint firstItem="gFc-Fc-XLK" firstAttribute="top" secondItem="oos-JS-xuW" secondAttribute="bottom" constant="4" id="a1Z-Aw-tQ9"/>
+                            <constraint firstItem="Hd2-7n-2d3" firstAttribute="leading" secondItem="wLg-Mf-X7w" secondAttribute="leading" constant="16" id="dql-jj-hd4"/>
+                            <constraint firstItem="wLg-Mf-X7w" firstAttribute="trailing" secondItem="gFc-Fc-XLK" secondAttribute="trailing" constant="16" id="g6H-dD-5n8"/>
+                            <constraint firstItem="oos-JS-xuW" firstAttribute="leading" secondItem="wLg-Mf-X7w" secondAttribute="leading" constant="16" id="gFw-V7-iQF"/>
+                            <constraint firstItem="wLg-Mf-X7w" firstAttribute="trailing" secondItem="Hd2-7n-2d3" secondAttribute="trailing" constant="16" id="nKW-Ou-9hS"/>
+                            <constraint firstItem="Pbw-PC-ujS" firstAttribute="top" secondItem="gFc-Fc-XLK" secondAttribute="bottom" constant="16" id="nqv-KI-0Bm"/>
+                            <constraint firstItem="wLg-Mf-X7w" firstAttribute="trailing" secondItem="oos-JS-xuW" secondAttribute="trailing" constant="16" id="tf2-S6-sur"/>
+                            <constraint firstItem="wLg-Mf-X7w" firstAttribute="bottom" secondItem="j7D-dQ-FZC" secondAttribute="bottom" constant="16" id="wFT-zj-IBY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wLg-Mf-X7w"/>
+                    </view>
+                    <connections>
+                        <outlet property="popButton" destination="j7D-dQ-FZC" id="Aur-7Z-Kag"/>
+                        <outlet property="titleDetailLabel" destination="oos-JS-xuW" id="qPf-9v-fiu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSb-Yb-igi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="366"/>
+        </scene>
+    </scenes>
+</document>
