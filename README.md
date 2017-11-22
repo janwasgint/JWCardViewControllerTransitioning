@@ -3,7 +3,7 @@
 The missing iOS 11 Card ViewController Transition famous from Apple Music and Podcastsusable addable in just one line of code.
 
 ## Demo
-![](https://github.com/janwasgint/FlightWatch/blob/master/demo.gif)
+![](https://github.com/janwasgint/JWCardViewControllerTransitioning/blob/master/demo.gif)
 
 ## Usage
 To start showing ViewControllers from a certain point in a NavigationController, simply call
