@@ -28,13 +28,13 @@ class JWCardPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         if (delegate.depth() == 0) {
             delegate.setNavigationBarHidden(navigationController.isNavigationBarHidden)
+            delegate.setTabBarHidden(navigationController.tabBarController?.tabBar.isHidden ?? true)
         }
-        navigationController.isNavigationBarHidden = true
         
         let cardMovingToBackground: UIView
         
         if (delegate.depth() == 0) {
-            cardMovingToBackground = navigationController.view
+            cardMovingToBackground = navigationController.view.window ?? navigationController.view
         } else {
             cardMovingToBackground = delegate.cardView(atDepth: delegate.depth() - 1) ?? UIView()
             
@@ -56,13 +56,15 @@ class JWCardPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         cardMovingToBackgroundSnapshot.clipsToBounds = true
         delegate.setBackgroundView(view: cardMovingToBackgroundSnapshot, forDepth: delegate.depth())
         
-        
         fromViewController.view.removeFromSuperview()
         containerView.addSubview(cardMovingToBackgroundSnapshot)
         containerView.addSubview(toViewController.view)
         
         delegate.setCardView(view: toViewController.view, forDepth: delegate.depth())
         toViewController.view.frame = toViewController.view.frame.offsetBy(dx: 0, dy: toViewController.view.frame.height)
+        
+        navigationController.isNavigationBarHidden = true
+        navigationController.tabBarController?.tabBar.isHidden = true
         
         JWCardAnimation.moveViewToBackground(view: cardMovingToBackgroundSnapshot)
         

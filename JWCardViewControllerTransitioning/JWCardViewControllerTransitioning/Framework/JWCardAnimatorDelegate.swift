@@ -22,4 +22,7 @@ protocol JWCardAnimatorDelegate {
     
     func navigationBarHidden() -> Bool
     func setNavigationBarHidden(_ navigationBarHidden: Bool)
+    
+    func tabBarHidden() -> Bool
+    func setTabBarHidden(_ tabBarHidden: Bool)
 }

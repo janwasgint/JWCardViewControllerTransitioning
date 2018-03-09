@@ -33,9 +33,11 @@ class JWCardAnimator {
     fileprivate var container: [UIView?]
     fileprivate var currentDepth: Int
     fileprivate var _navigationBarHidden: Bool
+    fileprivate var _tabBarHidden: Bool
     
     init() {
         _navigationBarHidden = false
+        _tabBarHidden = true
         card = [UIView?]()
         background = [UIView?]()
         container = [UIView?]()
@@ -114,4 +116,11 @@ extension JWCardAnimator: JWCardAnimatorDelegate {
         _navigationBarHidden = navigationBarHidden
     }
     
+    func tabBarHidden() -> Bool {
+        return _tabBarHidden
+    }
+    
+    func setTabBarHidden(_ tabBarHidden: Bool) {
+        _tabBarHidden = tabBarHidden
+    }
 }

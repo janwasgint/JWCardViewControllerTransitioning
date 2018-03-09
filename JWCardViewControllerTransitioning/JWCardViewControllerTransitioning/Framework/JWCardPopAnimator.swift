@@ -45,6 +45,7 @@ class JWCardPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             JWCardAnimation.moveViewBackToForeground(view: backgroundView) { _ in
                 
                 navigationController.isNavigationBarHidden = delegate.navigationBarHidden()
+                navigationController.tabBarController?.tabBar.isHidden = delegate.tabBarHidden()
                 transitionCompletion()
             }
         } else {
