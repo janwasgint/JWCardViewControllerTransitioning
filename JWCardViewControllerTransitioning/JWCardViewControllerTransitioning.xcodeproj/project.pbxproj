@@ -18,6 +18,7 @@
 		BC6905391FB8FF30007539FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6905371FB8FF30007539FD /* Main.storyboard */; };
 		BC6905491FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6905481FB8FF31007539FD /* JWCardViewControllerTransitioningTests.swift */; };
 		BC6905541FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6905531FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift */; };
+		BC69D32120B7202E00B9B805 /* JWDrawerCardNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69D32020B7202E00B9B805 /* JWDrawerCardNavigationControllerDelegate.swift */; };
 		BC98711B1FC1F07400D87214 /* PresentingMultipleCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC98711A1FC1F07400D87214 /* PresentingMultipleCards.storyboard */; };
 		BC98711D1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98711C1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift */; };
 		BCC484DF1FBF618500B045D1 /* JWCardAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC484D81FBF618400B045D1 /* JWCardAnimatorDelegate.swift */; };
@@ -69,6 +70,7 @@
 		BC69054F1FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWCardViewControllerTransitioningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6905531FB8FF31007539FD /* JWCardViewControllerTransitioningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardViewControllerTransitioningUITests.swift; sourceTree = "<group>"; };
 		BC6905551FB8FF31007539FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC69D32020B7202E00B9B805 /* JWDrawerCardNavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWDrawerCardNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		BC98711A1FC1F07400D87214 /* PresentingMultipleCards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PresentingMultipleCards.storyboard; sourceTree = "<group>"; };
 		BC98711C1FC1F29400D87214 /* PresentingMultipleCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingMultipleCardsViewController.swift; sourceTree = "<group>"; };
 		BCC484D81FBF618400B045D1 /* JWCardAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWCardAnimatorDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,14 @@
 			path = JWCardViewControllerTransitioningUITests;
 			sourceTree = "<group>";
 		};
+		BC69D32220B7247500B9B805 /* DrawerCard */ = {
+			isa = PBXGroup;
+			children = (
+				BC69D32020B7202E00B9B805 /* JWDrawerCardNavigationControllerDelegate.swift */,
+			);
+			path = DrawerCard;
+			sourceTree = "<group>";
+		};
 		BCC484E71FBF61BB00B045D1 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 				BCC484DD1FBF618400B045D1 /* JWCardPushAnimator.swift */,
 				BCC484DA1FBF618400B045D1 /* JWCardNavigationControllerDelegate.swift */,
 				BCDB21E91FC1FEF000C67A43 /* JWCardUtils.swift */,
+				BC69D32220B7247500B9B805 /* DrawerCard */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -366,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC69D32120B7202E00B9B805 /* JWDrawerCardNavigationControllerDelegate.swift in Sources */,
 				BC152D751FC0962D00FA81F8 /* DismissButton.swift in Sources */,
 				BC152D6F1FC08E6700FA81F8 /* SecondViewController.swift in Sources */,
 				BC6905361FB8FF30007539FD /* MainViewController.swift in Sources */,

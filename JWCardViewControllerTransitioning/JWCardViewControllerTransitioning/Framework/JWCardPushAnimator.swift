@@ -71,8 +71,9 @@ class JWCardPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         JWCardAnimation.showAsCard(view: toViewController.view) { _ in
             toViewController.view = containerView
             delegate.setContainerView(view: containerView, forDepth: delegate.depth())
-            
             transitionContext.completeTransition(true)
         }
     }
 }
+
+

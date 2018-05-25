@@ -20,8 +20,10 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        JWCardNavigationControllerDelegate.startPresentingViewControllersAsCards(
-            inNavigationController: navigationController!)
+        JWDrawerCardNavigationControllerDelegate.addDrawerCard(inNavigationController: navigationController!,
+                                                               drawerViewController: self,
+                                                               cardViewController: storyboard!.instantiateViewController(withIdentifier: .cardIdentifier),
+                                                               drawerTitle: "Drawer Test")
     }
     
     

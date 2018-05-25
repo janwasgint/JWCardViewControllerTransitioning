@@ -10,7 +10,7 @@
 import UIKit
 
 class JWCardNavigationControllerDelegate: NSObject, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
-    fileprivate let cardAnimator = JWCardAnimator()
+    let cardAnimator = JWCardAnimator()
     internal var depthOfLastDidShow: Int?
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -37,12 +37,11 @@ class JWCardNavigationControllerDelegate: NSObject, UINavigationControllerDelega
         }
         self.depthOfLastDidShow = depthOfCurrentDidShow
     }
-}
-
-extension JWCardNavigationControllerDelegate { //Mark: Static setup
+    
+    //Mark: Static setup
     static var navigationControllerDelegates = [JWCardNavigationControllerDelegate]()
     
-    static func startPresentingViewControllersAsCards(inNavigationController navigationController: UINavigationController) {
+    class func startPresentingViewControllersAsCards(inNavigationController navigationController: UINavigationController) {
         if (navigationController.delegate as? JWCardNavigationControllerDelegate == nil) {
             let navigationControllerDelegate = JWCardNavigationControllerDelegate()
             navigationController.delegate = navigationControllerDelegate
