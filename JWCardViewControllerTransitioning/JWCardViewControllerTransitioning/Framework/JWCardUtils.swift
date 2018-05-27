@@ -12,11 +12,14 @@ extension UIView {
     func createPinnedSubview() -> UIView {
         let subview = UIView()
         addSubview(subview)
+        
+        subview.translatesAutoresizingMaskIntoConstraints = false
         subview.frame = frame
-        subview.topAnchor.constraint(equalTo: topAnchor)
-        subview.leftAnchor.constraint(equalTo: leftAnchor)
-        subview.rightAnchor.constraint(equalTo: rightAnchor)
-        subview.bottomAnchor.constraint(equalTo: bottomAnchor)
+        subview.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        subview.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        subview.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        subview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
         return subview
     }
 }

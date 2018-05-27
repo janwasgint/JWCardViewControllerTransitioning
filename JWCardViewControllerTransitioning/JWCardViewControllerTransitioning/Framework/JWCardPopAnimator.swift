@@ -29,7 +29,7 @@ class JWCardPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         let cardFrame = cardView.frame
         
-        JWCardAnimation.hideCard(view: cardView, bottomOfView: containerView.frame.maxY) { _ in
+        JWCardAnimation.hideCard(view: cardView, bottomOfView: containerView.frame.maxY - delegate.offsetToBottom()) { _ in
             fromViewController.view = cardView
             fromViewController.view.removeFromSuperview()
         }

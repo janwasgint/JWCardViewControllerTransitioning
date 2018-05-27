@@ -25,4 +25,6 @@ protocol JWCardAnimatorDelegate {
     
     func tabBarHidden() -> Bool
     func setTabBarHidden(_ tabBarHidden: Bool)
+    
+    func offsetToBottom() -> CGFloat
 }

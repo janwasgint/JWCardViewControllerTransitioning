@@ -34,8 +34,10 @@ class JWCardAnimator {
     fileprivate var currentDepth: Int
     fileprivate var _navigationBarHidden: Bool
     fileprivate var _tabBarHidden: Bool
+    fileprivate var _offsetToBottom: CGFloat
     
-    init() {
+    init(offsetToBottom: CGFloat) {
+        _offsetToBottom = offsetToBottom
         _navigationBarHidden = false
         _tabBarHidden = true
         card = [UIView?]()
@@ -59,6 +61,10 @@ class JWCardAnimator {
 }
 
 extension JWCardAnimator: JWCardAnimatorDelegate {
+    func offsetToBottom() -> CGFloat {
+        return _offsetToBottom
+    }
+    
     func backgroundView(atDepth depth: Int) -> UIView? {
         if (depth >= background.count) {
             return nil

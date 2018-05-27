@@ -25,10 +25,6 @@ class MainViewController: UIViewController {
                                                                cardViewController: storyboard!.instantiateViewController(withIdentifier: .cardIdentifier),
                                                                drawerTitle: "Drawer Test")
     }
-    
-    
-    
-    
 }
 
 //MARK: TableViewDataSource

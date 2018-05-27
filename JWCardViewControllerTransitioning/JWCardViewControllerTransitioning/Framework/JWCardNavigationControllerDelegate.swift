@@ -10,8 +10,17 @@
 import UIKit
 
 class JWCardNavigationControllerDelegate: NSObject, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
-    let cardAnimator = JWCardAnimator()
+    let cardAnimator: JWCardAnimator
     internal var depthOfLastDidShow: Int?
+    
+    init(offsetToBottom: CGFloat) {
+        cardAnimator = JWCardAnimator(offsetToBottom: offsetToBottom)
+        super.init()
+    }
+    
+    override convenience init() {
+        self.init(offsetToBottom: 0)
+    }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if (operation == .push) {

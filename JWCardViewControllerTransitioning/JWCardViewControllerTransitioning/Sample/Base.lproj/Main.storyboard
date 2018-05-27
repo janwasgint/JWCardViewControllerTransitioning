@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FZl-od-Ii1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FZl-od-Ii1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="JWCardViewControllerTransitioning" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zOE-63-CgB">
-                                <rect key="frame" x="0.0" y="200.5" width="375" height="466.5"/>
+                                <rect key="frame" x="0.0" y="200.5" width="375" height="417.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -46,6 +46,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="rme-YP-jdv"/>
                     <navigationItem key="navigationItem" id="nAo-g5-X2S"/>
                     <connections>
                         <outlet property="sampleSelectionTableView" destination="zOE-63-CgB" id="iHH-od-H9x"/>
@@ -53,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415.19999999999999" y="37.331334332833585"/>
+            <point key="canvasLocation" x="1354.4000000000001" y="37.331334332833585"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0PD-Dn-Vmh">
@@ -65,7 +66,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Yle-on-qrg"/>
+                        <segue destination="haj-OE-qSc" kind="relationship" relationship="rootViewController" id="Yle-on-qrg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l39-vH-Jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,7 +79,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="CardViewControllerIdentifier" storyboardName="PresentingACard" referencedIdentifier="CardViewControllerIdentifier" id="6FQ-XG-3V1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyu-Sa-lOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="-239"/>
+            <point key="canvasLocation" x="1984.8" y="-239.28035982008998"/>
         </scene>
         <!--PresentingACardInANavigationController-->
         <scene sceneID="BXi-0m-zpd">
@@ -86,7 +87,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="NavigationViewControllerIdentifier" storyboardName="PresentingACardInANavigationController" id="tfl-MP-ibU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3P-vB-ckR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="-117"/>
+            <point key="canvasLocation" x="2044" y="-117.84107946026987"/>
         </scene>
         <!--PresentingMultipleCards-->
         <scene sceneID="cl2-Fa-G2w">
@@ -94,7 +95,26 @@
                 <viewControllerPlaceholder storyboardIdentifier="MultipleCardsViewControllerIdentifier" storyboardName="PresentingMultipleCards" id="5Hk-7y-ree" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBK-32-y4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026" y="10"/>
+            <point key="canvasLocation" x="1964" y="9.8950524737631191"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8iO-HH-ob0">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="haj-OE-qSc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zhn-RW-gPr"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hfr-dm-ZHj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="L0h-1Q-nwP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giM-fh-Y5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415.19999999999999" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>

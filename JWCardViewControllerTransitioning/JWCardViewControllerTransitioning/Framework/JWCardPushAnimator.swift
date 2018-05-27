@@ -61,7 +61,7 @@ class JWCardPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toViewController.view)
         
         delegate.setCardView(view: toViewController.view, forDepth: delegate.depth())
-        toViewController.view.frame = toViewController.view.frame.offsetBy(dx: 0, dy: toViewController.view.frame.height)
+        toViewController.view.frame = toViewController.view.frame.offsetBy(dx: 0, dy: toViewController.view.frame.height - delegate.offsetToBottom())
         
         navigationController.isNavigationBarHidden = true
         navigationController.tabBarController?.tabBar.isHidden = true
