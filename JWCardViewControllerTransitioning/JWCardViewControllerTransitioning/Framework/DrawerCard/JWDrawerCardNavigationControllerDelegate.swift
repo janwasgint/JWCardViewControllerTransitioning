@@ -19,6 +19,8 @@ class JWDrawerCardNavigationControllerDelegate: JWCardNavigationControllerDelega
     static var navigationController: UINavigationController?
     static var showingCard = false
     
+    static var drawerCardInteractionController: JWDrawerCardInteractionController?
+    
     static var snapshotOfTabbar: UIView?
     
     init() {
@@ -64,6 +66,9 @@ extension JWDrawerCardNavigationControllerDelegate { //Mark: Static setup
             navigationControllerDelegates.append(navigationControllerDelegate)
             
             addDrawer(to: navigationController.view, withTitle: drawerTitle)
+            
+            // comment this in to enable drawer panning (not fully working yet)
+//            self.drawerCardInteractionController = JWDrawerCardInteractionController(drawerViewController: drawerViewController, cardViewController: cardViewController, drawer: drawer!)
         }
     }
 }
@@ -91,6 +96,10 @@ extension JWDrawerCardNavigationControllerDelegate {
         }
         
         if let drawer = self.drawer, let cardView = cardViewController?.view {
+            let downSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(cardDrawnDown))
+            downSwipeGestureRecognizer.direction = .down
+            cardView.addGestureRecognizer(downSwipeGestureRecognizer)
+            
             let drawerToolBarFrame = CGRect(x: -1, y: JWCardAnimationConstants.cardMarginToTop, width: cardView.frame.width + 2, height: drawerToolBarHeight)
             
             UIView.animate(withDuration: JWCardAnimationConstants.animationDuration, animations: {
@@ -177,9 +186,11 @@ extension JWDrawerCardNavigationControllerDelegate {
         // gesture recognizer
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(drawerTapped))
         drawerToolBar.addGestureRecognizer(tapGestureRecognizer)
-        let panGetureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(drawerPan(recognizer:)))
-        drawerToolBar.addGestureRecognizer(panGetureRecognizer)
-                
+        
+        let upSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(drawerTapped))
+        upSwipeGestureRecognizer.direction = .up
+        drawerToolBar.addGestureRecognizer(upSwipeGestureRecognizer)
+        
         drawer = drawerToolBar
     }
     
@@ -189,57 +200,9 @@ extension JWDrawerCardNavigationControllerDelegate {
         }
     }
     
-    @objc class func drawerPan(recognizer: UIPanGestureRecognizer) {
-        JWDrawerCardNavigationControllerDelegate.handleDrawerPan(recognizer: recognizer)
+    @objc class func cardDrawnDown() {
+        navigationController?.popViewController(animated: true)
     }
-    
-    class func handleDrawerPan(recognizer: UIPanGestureRecognizer) {
-        if let drawerViewController = self.drawerViewController {
-            let translation = recognizer.translation(in: drawerViewController.view)
-            if let view = recognizer.view {
-                let statusBarHeight = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
-                let topOffsetToDrawerCenterY = statusBarHeight + JWCardAnimationConstants.cardMarginToTop + drawerToolBarHeight * 0.5
-                
-                if (view.center.y + translation.y <= drawerViewController.view.frame.maxY - drawerOffset - drawerToolBarHeight * 0.5) &&
-                    (view.center.y + translation.y >= topOffsetToDrawerCenterY) {
-                    view.center = CGPoint(x:view.center.x,
-                                          y:view.center.y + translation.y)
-                }
-                
-                let maximumDrawDistance = drawerViewController.view.frame.height - statusBarHeight - drawerOffset - drawerToolBarHeight - JWCardAnimationConstants.cardMarginToTop
-                let drawnDistance = view.center.y - topOffsetToDrawerCenterY
-                let percentageOfCompletion = 1 - drawnDistance/maximumDrawDistance
-                
-                if percentageOfCompletion <= 0.3 {
-                    for subview in view.subviews {
-                        if (subview.tag != JWTouchableUIView.pressedStateDarkeningViewTag) {
-                            subview.alpha = 1 - (percentageOfCompletion / 0.3)
-                        }
-                    }
-                }
-                view.layer.cornerRadius = percentageOfCompletion * JWCardAnimationConstants.cornerRadius
-                
-                if (recognizer.state == .cancelled || recognizer.state == .ended || recognizer.state == .failed) {
-                    if (percentageOfCompletion < 0.5) {
-                        UIView.animate(withDuration: JWCardAnimationConstants.animationDuration) {
-                            view.layer.cornerRadius = 0
-                            for subview in view.subviews {
-                                if (subview.tag != JWTouchableUIView.pressedStateDarkeningViewTag) {
-                                    subview.alpha = 1
-                                }
-                            }
-                            view.center = CGPoint(x:view.center.x,
-                                                  y:drawerViewController.view.frame.height - drawerOffset - drawerToolBarHeight * 0.5)
-                        }
-                    }
-                }
-            }
-            recognizer.setTranslation(CGPoint.zero, in: drawerViewController.view)
-            
-            
-        }
-    }
-    
     
     fileprivate func addTopHandleView(to view: UIView) {
         let handleViewTopMargin: CGFloat = 10
