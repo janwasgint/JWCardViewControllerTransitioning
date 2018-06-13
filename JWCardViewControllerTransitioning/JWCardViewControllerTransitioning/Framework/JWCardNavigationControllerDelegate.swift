@@ -15,6 +15,7 @@ class JWCardNavigationControllerDelegate: NSObject, UINavigationControllerDelega
     
     init(offsetToBottom: CGFloat) {
         cardAnimator = JWCardAnimator(offsetToBottom: offsetToBottom)
+        
         super.init()
     }
     
@@ -23,6 +24,10 @@ class JWCardNavigationControllerDelegate: NSObject, UINavigationControllerDelega
     }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if depthOfLastDidShow == nil {
+            depthOfLastDidShow = navigationController.depthOfViewControllerInNavigationStack(viewController: fromVC)
+        }
+        
         if (operation == .push) {
             return cardAnimator.cardPushAnimator
         } else {

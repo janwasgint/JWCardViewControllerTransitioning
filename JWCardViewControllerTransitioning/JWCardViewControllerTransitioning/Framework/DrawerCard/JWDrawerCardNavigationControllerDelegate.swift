@@ -10,6 +10,7 @@ import UIKit
 
 class JWDrawerCardNavigationControllerDelegate: JWCardNavigationControllerDelegate {
     static var drawer: JWTouchableUIView?
+    static var drawerTitleLabel: UILabel?
     static var drawerOffset: CGFloat = 0
     static let drawerToolBarHeight: CGFloat = 70
     static let drawerColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1)
@@ -23,8 +24,26 @@ class JWDrawerCardNavigationControllerDelegate: JWCardNavigationControllerDelega
     
     static var snapshotOfTabbar: UIView?
     
+    static var tabBar: UITabBar? = { () -> UITabBar? in
+        if let drawerViewController = JWDrawerCardNavigationControllerDelegate.drawerViewController {
+            if let unwrappedTabBar = drawerViewController.tabBarController?.tabBar {
+                return unwrappedTabBar
+            } else {
+                if drawerViewController.childViewControllers.count > 0 {
+                    if let unwrappedTabBar = drawerViewController.childViewControllers.first?.tabBarController?.tabBar {
+                        return unwrappedTabBar
+                    }
+                }
+            }
+        }
+        return nil
+    }()
+    
     init() {
-        JWDrawerCardNavigationControllerDelegate.drawerOffset = (JWDrawerCardNavigationControllerDelegate.drawerViewController?.tabBarController?.tabBar.frame.height ?? 0) + (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
+        let tabBarHeight: CGFloat = JWDrawerCardNavigationControllerDelegate.tabBar?.frame.height ?? (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
+        
+        
+        JWDrawerCardNavigationControllerDelegate.drawerOffset = tabBarHeight
         
         
         print("safe area insets \(String(describing: UIApplication.shared.keyWindow?.safeAreaInsets.bottom))")
@@ -53,7 +72,7 @@ extension JWDrawerCardNavigationControllerDelegate { //Mark: Static setup
                              drawerViewController: UIViewController,
                              cardViewController: UIViewController,
                              drawerTitle: String) {
-        if (navigationController.delegate as? JWDrawerCardNavigationControllerDelegate == nil) {
+//        if (navigationController.delegate as? JWDrawerCardNavigationControllerDelegate == nil) {
             self.cardViewController = cardViewController
             self.drawerViewController = drawerViewController
             self.navigationController = navigationController
@@ -69,13 +88,17 @@ extension JWDrawerCardNavigationControllerDelegate { //Mark: Static setup
             
             // comment this in to enable drawer panning (not fully working yet)
 //            self.drawerCardInteractionController = JWDrawerCardInteractionController(drawerViewController: drawerViewController, cardViewController: cardViewController, drawer: drawer!)
-        }
+//        }
+    }
+    
+    class func setDrawerTitle(drawerTitle: String) {
+        drawerTitleLabel?.text = drawerTitle
     }
 }
 
 extension JWDrawerCardNavigationControllerDelegate {
     fileprivate class func push() {
-        if let tabBar = drawerViewController?.tabBarController?.tabBar {
+        if let tabBar = JWDrawerCardNavigationControllerDelegate.tabBar {
             let tabBarFrame = CGRect(x: tabBar.frame.minX, y: (drawerViewController?.view.frame.height ?? 0) - tabBar.frame.height, width: tabBar.frame.width, height: tabBar.frame.height)
             
             if let tabBarSnapshot = { () -> UIView? in
@@ -158,10 +181,37 @@ extension JWDrawerCardNavigationControllerDelegate {
 extension JWDrawerCardNavigationControllerDelegate {
     fileprivate class func addDrawer(to view: UIView, withTitle title: String) {
         // drawer
+        let drawerToolBarStartFrame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: drawerToolBarHeight)
         let drawerToolBarFrame = CGRect(x: 0, y: view.frame.height - drawerToolBarHeight - drawerOffset, width: view.frame.width, height: drawerToolBarHeight)
-        let drawerToolBar = JWTouchableUIView(frame: drawerToolBarFrame)
+        let drawerToolBar = JWTouchableUIView(frame: drawerToolBarStartFrame)
         drawerToolBar.backgroundColor = drawerColor
         view.addSubview(drawerToolBar)
+        
+        // tabbar snapshot
+        if let tabBar = JWDrawerCardNavigationControllerDelegate.tabBar,
+            let tabBarSnapshot = { () -> UIView? in
+                let tabBarFrame = CGRect(x: tabBar.frame.minX, y: (drawerViewController?.view.frame.height ?? 0) - tabBar.frame.height, width: tabBar.frame.width, height: tabBar.frame.height)
+                
+                let backgroundView = UIView(frame: tabBar.frame.offsetBy(dx: 0, dy: -tabBar.frame.minY))
+                backgroundView.backgroundColor = UIColor(red: CGFloat(249.0/255.0), green: CGFloat(249.0/255.0), blue: CGFloat(249.0/255.0), alpha: 1)
+                
+                snapshotOfTabbar = backgroundView
+                snapshotOfTabbar?.frame = tabBarFrame
+                
+                snapshotOfTabbar?.addSubview(tabBar.snapshotView(afterScreenUpdates: false) ?? UIView())
+                return snapshotOfTabbar
+            }() {
+            navigationController?.view.addSubview(tabBarSnapshot)
+        }
+        
+        // drawer animation
+        UIView.animate(withDuration: JWCardAnimationConstants.animationDuration, animations: {
+            drawerToolBar.frame = drawerToolBarFrame
+        }) { _ in
+            snapshotOfTabbar?.removeFromSuperview()
+            snapshotOfTabbar = nil
+            drawerTapped()
+        }
         
         // title label
         let drawerTitleOffset: CGFloat = 20
@@ -170,6 +220,7 @@ extension JWDrawerCardNavigationControllerDelegate {
         let drawerTitleLabel = UILabel(frame: drawerTitleFrame)
         drawerTitleLabel.text = title
         drawerToolBar.addSubview(drawerTitleLabel)
+        self.drawerTitleLabel = drawerTitleLabel
         
         // separators
         let separatorThickness: CGFloat = 1
@@ -191,6 +242,10 @@ extension JWDrawerCardNavigationControllerDelegate {
         upSwipeGestureRecognizer.direction = .up
         drawerToolBar.addGestureRecognizer(upSwipeGestureRecognizer)
         
+        let downSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(drawerDrawDown))
+        downSwipeGestureRecognizer.direction = .down
+        drawerToolBar.addGestureRecognizer(downSwipeGestureRecognizer)
+        
         drawer = drawerToolBar
     }
     
@@ -202,6 +257,36 @@ extension JWDrawerCardNavigationControllerDelegate {
     
     @objc class func cardDrawnDown() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc class func drawerDrawDown() {
+        // tabbar snapshot
+        if let tabBar = JWDrawerCardNavigationControllerDelegate.tabBar,
+            let tabBarSnapshot = { () -> UIView? in
+                let tabBarFrame = CGRect(x: tabBar.frame.minX, y: (drawerViewController?.view.frame.height ?? 0) - tabBar.frame.height, width: tabBar.frame.width, height: tabBar.frame.height)
+                
+                let backgroundView = UIView(frame: tabBar.frame.offsetBy(dx: 0, dy: -tabBar.frame.minY))
+                backgroundView.backgroundColor = UIColor(red: CGFloat(249.0/255.0), green: CGFloat(249.0/255.0), blue: CGFloat(249.0/255.0), alpha: 1)
+                
+                snapshotOfTabbar = backgroundView
+                snapshotOfTabbar?.frame = tabBarFrame
+                
+                snapshotOfTabbar?.addSubview(tabBar.snapshotView(afterScreenUpdates: false) ?? UIView())
+                return snapshotOfTabbar
+            }() {
+            navigationController?.view.addSubview(tabBarSnapshot)
+        }
+        
+        // animate drawer out
+        UIView.animate(withDuration: JWCardAnimationConstants.animationDuration, animations: {
+            drawer?.frame = drawer?.frame.offsetBy(dx: 0, dy: JWDrawerCardNavigationControllerDelegate.drawerOffset + (drawer?.frame.height ?? 0)) ?? CGRect.zero
+        }) { _ in
+            drawer?.removeFromSuperview()
+            drawer = nil
+            
+            snapshotOfTabbar?.removeFromSuperview()
+            snapshotOfTabbar = nil
+        }
     }
     
     fileprivate func addTopHandleView(to view: UIView) {

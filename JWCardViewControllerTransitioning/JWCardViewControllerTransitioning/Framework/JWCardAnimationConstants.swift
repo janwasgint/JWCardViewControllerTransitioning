@@ -1,6 +1,6 @@
 //
 //  JWCardAnimationConstants.swift
-//  Simple Workout
+//  JWCardViewControllerTransitioning
 //
 //  Created by Jan Wasgint on 10/09/16.
 //  Copyright © 2016 Jan Wasgint. All rights reserved.
